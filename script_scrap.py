@@ -7,6 +7,13 @@ username = 'Geekt973Geek'
 email = 'geekt973@gmail.com'
 password = 'ASMB2011asmb@'
 
+## symbol I need to search on it 
+symbol = 'sPx'
+## concatenation symbol with '$' in the begining ##
+symbol = '$' + symbol.upper()
+print(symbol)
+## initialize number of symbol mentioned in the account ##
+number_mintioned = 0
 
 ### make instance of FireFox browser webdriver ###
 driver = webdriver.Firefox()
@@ -37,6 +44,7 @@ time.sleep(5)
 
 ## request on specific url ##
 driver.get('https://twitter.com/Mr_Derivatives')
+## interval time ##
 time.sleep(180) ### delay to load all data of url account ###
 
 ## get all spans from requests that contains symbols ##
@@ -46,6 +54,7 @@ spans = driver.find_elements('xpath','//span[@class="r-18u37iz"]')
 ## loop in pans to print its symbol text ##
 for span in spans:
     ## check if text of span is starts with '$' or not ##
-    if span.text[0]=='$':
-        print(span.text)
+    if span.text.startswith('$') and span.text==symbol:
+        number_mintioned +=1
+print(number_mintioned)
     
