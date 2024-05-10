@@ -26,7 +26,7 @@ urls_required = [
 def scrap_method(interval_time , symbol , urls_required = urls_required):
     ## make the symbol letters in upper case ##
     symbol = symbol.upper()
-    print(symbol)
+    # print(symbol)
     ## initialize number of symbol mentioned in the account ##
     number_mintioned = 0
 
@@ -84,7 +84,7 @@ def scrap_method(interval_time , symbol , urls_required = urls_required):
                         if span_text==symbol:
                             number_mintioned +=1
         message = f"{symbol} mentioned {number_mintioned} in last {interval_time} seconds"
-        print(number_mintioned)
+        # print(number_mintioned)
         messagebox.showinfo("Done!", message)
     except:
         messagebox.ERROR("watch out!","error log in")

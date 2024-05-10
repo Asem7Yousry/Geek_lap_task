@@ -45,3 +45,8 @@ make scraping tool only search on tweets not in BIO or outer the tweets are , th
 - use message library to show how many times the symbol mentioned in message box after scraping
 - use the same library to show error message to show error message if error log in happened 
 
+## comit 8_ create a simple ui to be easy for user to use scraping method.
+- by using Tkinter module in python we developed a simple UI for scraping tool.
+- in UI there are 2 entries to enter a symbol and interval time as a method argument .   
+
+
