@@ -17,3 +17,10 @@ scraping tool to get number of mentioned symbol in interval time through a group
 - put symbol 
 - concatenation it with '$' in the begining of symbol after making all letters in upper 
 - looping in all spans with '$' in begining to  count the number of mentioning it 
+
+## comit 4_ try to get number of specific symbol mentions in all 10 pages in speceific interval time 
+- put all urls il list 
+- loop in list urls 
+- request on each url 
+- get all symbols in speceific interval time 
+- loop on symbols to get specific symbol  

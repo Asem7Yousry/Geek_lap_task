@@ -6,9 +6,22 @@ import time
 username = 'Geekt973Geek'
 email = 'geekt973@gmail.com'
 password = 'ASMB2011asmb@'
+#### scraping accounts urls #####
+urls_required = [
+    'https://twitter.com/Mr_Derivatives',
+    'https://twitter.com/warrior_0719',
+    'https://twitter.com/ChartingProdigy',
+    'https://twitter.com/allstarcharts',
+    'https://twitter.com/yuriymatso',
+    'https://twitter.com/TriggerTrades',
+    'https://twitter.com/AdamMancini4',
+    'https://twitter.com/CordovaTrades',
+    'https://twitter.com/Barchart',
+    'https://twitter.com/RoyLMattox'
+]
 
 ## symbol I need to search on it 
-symbol = 'sPx'
+symbol = 'pltr'
 ## concatenation symbol with '$' in the begining ##
 symbol = '$' + symbol.upper()
 print(symbol)
@@ -42,19 +55,21 @@ time.sleep(5)
 driver.find_element('xpath',"//span[text()='Log in']").click()
 time.sleep(5)
 
-## request on specific url ##
-driver.get('https://twitter.com/Mr_Derivatives')
-## interval time ##
-time.sleep(180) ### delay to load all data of url account ###
+### loop on the 10 urls ###
+for url in urls_required:
+    ## request on specific url ##
+    driver.get(url)
+    ## interval time ##
+    time.sleep(90) ### delay to load all data of url account ###
 
-## get all spans from requests that contains symbols ##
-spans = driver.find_elements('xpath','//span[@class="r-18u37iz"]')
-# time.sleep(40)
+    ## get all spans from requests that contains symbols ##
+    spans = driver.find_elements('xpath','//span[@class="r-18u37iz"]')
+    # time.sleep(40)
 
-## loop in pans to print its symbol text ##
-for span in spans:
-    ## check if text of span is starts with '$' or not ##
-    if span.text.startswith('$') and span.text==symbol:
-        number_mintioned +=1
+    ## loop in pans to print its symbol text ##
+    for span in spans:
+        ## check if text of span is starts with '$' or not ##
+        if span.text.startswith('$') and span.text==symbol:
+            number_mintioned +=1
 print(number_mintioned)
     
