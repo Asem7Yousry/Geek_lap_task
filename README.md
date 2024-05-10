@@ -30,3 +30,11 @@ scraping tool to get number of mentioned symbol in interval time through a group
 - seperate each span text from its '$' in its begining 
 - make span text letters in upper case  
 - compare between symbol and span text in upper case 
+
+## comit 5_ make scraping tool only search for symbol in only tweets.
+make scraping tool only search on tweets not in BIO or outer the tweets are , that happenes by :-
+- after request on individual url we get all the tweets .
+- each tweet is in tag name called article .  
+- we fined elements that in tag name article.  
+- then we search in each article for spans .
+

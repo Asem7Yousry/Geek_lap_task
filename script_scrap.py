@@ -62,19 +62,23 @@ for url in urls_required:
     ## interval time ##
     time.sleep(90) ### delay to load all data of url account ###
 
-    ## get all spans from requests that contains symbols ##
-    spans = driver.find_elements('xpath','//span[@class="r-18u37iz"]')
-    # time.sleep(40)
+    ### get all tweets(all articles) by article tag name in url ###
+    tweets = driver.find_elements('xpath','//article[@data-testid="tweet"]')
 
-    ## loop in pans to print its symbol text ##
-    for span in spans:
-        ## check if text of span is starts with '$' or not ##
-        if span.text.startswith('$'):
-            ## seperate the symbol from '$' and upper its letters ##
-            span_text = span.text[1:].upper()
-            ## check if span text is equal to symbol ##
-            if span_text==symbol:
-                number_mintioned +=1
-                print(number_mintioned)
+    ### loop in tweets to get all spans ###
+    for tweet in tweets:
+        ## get all spans from requests that contains symbols in each tweet itself##
+        spans = tweet.find_elements('xpath','.//span[@class="r-18u37iz"]')
+        # time.sleep(40)
+
+        ## loop in pans to print its symbol text ##
+        for span in spans:
+            ## check if text of span is starts with '$' or not ##
+            if span.text.startswith('$'):
+                ## seperate the symbol from '$' and upper its letters ##
+                span_text = span.text[1:].upper()
+                ## check if span text is equal to symbol ##
+                if span_text==symbol:
+                    number_mintioned +=1
 print(number_mintioned)
     
