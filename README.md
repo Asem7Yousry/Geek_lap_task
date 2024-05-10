@@ -24,3 +24,9 @@ scraping tool to get number of mentioned symbol in interval time through a group
 - request on each url 
 - get all symbols in speceific interval time 
 - loop on symbols to get specific symbol  
+
+## comit 5_ make symbols catched and symbol in search be in upper case to compare between then .
+- make symbol letters in search in upper case 
+- seperate each span text from its '$' in its begining 
+- make span text letters in upper case  
+- compare between symbol and span text in upper case 

@@ -21,9 +21,9 @@ urls_required = [
 ]
 
 ## symbol I need to search on it 
-symbol = 'pltr'
-## concatenation symbol with '$' in the begining ##
-symbol = '$' + symbol.upper()
+symbol = 'spX'
+## make the symbol letters in upper case ##
+symbol = symbol.upper()
 print(symbol)
 ## initialize number of symbol mentioned in the account ##
 number_mintioned = 0
@@ -69,7 +69,12 @@ for url in urls_required:
     ## loop in pans to print its symbol text ##
     for span in spans:
         ## check if text of span is starts with '$' or not ##
-        if span.text.startswith('$') and span.text==symbol:
-            number_mintioned +=1
+        if span.text.startswith('$'):
+            ## seperate the symbol from '$' and upper its letters ##
+            span_text = span.text[1:].upper()
+            ## check if span text is equal to symbol ##
+            if span_text==symbol:
+                number_mintioned +=1
+                print(number_mintioned)
 print(number_mintioned)
     
