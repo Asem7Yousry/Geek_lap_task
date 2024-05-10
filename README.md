@@ -31,10 +31,17 @@ scraping tool to get number of mentioned symbol in interval time through a group
 - make span text letters in upper case  
 - compare between symbol and span text in upper case 
 
-## comit 5_ make scraping tool only search for symbol in only tweets.
+## comit 6_ make scraping tool only search for symbol in only tweets.
 make scraping tool only search on tweets not in BIO or outer the tweets are , that happenes by :-
 - after request on individual url we get all the tweets .
 - each tweet is in tag name called article .  
 - we fined elements that in tag name article.  
 - then we search in each article for spans .
+
+## comit 7_ make scraping tool as a function to be called any time.
+- make script of scrapping data as a method (function) to be called any time .
+- the function parameters are [(symbol) that we search about , (interval time)time required for loading data of page account , (url_required) the urls of accounts that we search symbol on them(and it default)]  
+- put the whole code in try and except if there is aa error while log in   
+- use message library to show how many times the symbol mentioned in message box after scraping
+- use the same library to show error message to show error message if error log in happened 
 
