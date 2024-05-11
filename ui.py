@@ -4,26 +4,6 @@ from tkinter import *  # for the ui of system
 import webbrowser  # to show pages in browser by url 
 from script_scrap import  scrap_method
 
-### functions for interval time entry ###
-def validate_integer(value):
-    if value.isdigit():
-        return True
-    elif value == "":
-        return True
-    else:
-        return False
-
-def increment():
-    current_value = int(entry_time.get())
-    entry_time.delete(0, END)
-    entry_time.insert(0, str(current_value + 10))
-
-def decrement():
-    current_value = int(entry_time.get())
-    if current_value > 0:  # Ensure the value doesn't go below zero
-        entry_time.delete(0, END)
-        entry_time.insert(0, str(current_value - 10))
-
 
 ### intialize ui window dimintions and attributes ##
 root = Tk()
@@ -83,16 +63,11 @@ button4.place(x=25,y=220)
 Interval_time = Label(root,text="Interval time in sec",fg="red",bg="gray",font=("tajawal",14,"bold"))
 Interval_time.place(x=380,y=350)
 # entry
-validate_cmd = root.register(validate_integer)
-entry_time = Entry(root,width=20,font=("tajawal",12),justify="center" , validate="key", validatecommand=(validate_cmd, "%P"))
+entry_time = Entry(root,width=20,font=("tajawal",12),justify="center" ,)
 entry_time.place(x=380,y=380)
 entry_time.insert(0, "0")
 
-increment_button = Button(root, text="Increment", command=increment)
-increment_button.place(x=380,y=405)
 
-decrement_button = Button(root, text="Decrement", command=decrement)
-decrement_button.place(x=450,y=405)
 ## for symbol ##
 # label
 symbol = Label(root,text="Symbol",fg="red",bg="gray",font=("tajawal",14,"bold"))
@@ -105,7 +80,6 @@ entry_symbol.place(x=180,y=380)
 def main_method():
     ### override on symbol and interval time ###
     symbol = entry_symbol.get()
-    # timy = entry_time.get()
     time = int(entry_time.get())
     ## call method for scraping urls ##
     scrap_method(interval_time=time , symbol=symbol)
