@@ -26,7 +26,6 @@ urls_required = [
 def scrap_method(interval_time , symbol , urls_required = urls_required):
     ## make the symbol letters in upper case ##
     symbol = symbol.upper()
-    # print(symbol)
     ## initialize number of symbol mentioned in the account ##
     number_mintioned = 0
 

@@ -47,6 +47,8 @@ make scraping tool only search on tweets not in BIO or outer the tweets are , th
 
 ## comit 8_ create a simple ui to be easy for user to use scraping method.
 - by using Tkinter module in python we developed a simple UI for scraping tool.
-- in UI there are 2 entries to enter a symbol and interval time as a method argument .   
+- in UI there are 2 entries to enter a symbol and interval time as a method argument . 
 
-
+## comit 8_ make some details more for entry of interval time.
+- make 2 buttons to increase and decrease time by 10 second .
+   
